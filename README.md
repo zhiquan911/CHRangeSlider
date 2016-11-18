@@ -49,6 +49,22 @@ override func viewDidLoad() {
     self.rangeSlider.handlers = [minSelectItem, midSelectItem, maxSelectItem]
 }
 
+// MARK: - 实现滑杆委托方法
+extension ViewController: CHRangeSliderDelegate {
+    
+    func rangeSlider(slider: CHRangeSlider, stringForValue value: Double, handler: CHSliderHandler) -> String {
+        let text = String(format: "￥%.2f", value)
+        if handler === self.minSelectItem {
+            self.textFieldOrder.text = String(format: "%.2f", value)
+        } else if handler === self.midSelectItem {
+            self.textFieldCurrent.text = String(format: "%.2f", value)
+        } else if handler === self.maxSelectItem {
+            self.textFieldTrigger.text = String(format: "%.2f", value)
+        }
+        return text
+    }
+}
+
 ```
 
 

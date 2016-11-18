@@ -47,6 +47,10 @@ public class CHRangeSlider: UIControl {
     @IBInspectable public var minValue: Double = 0 {
         didSet {
             self.refreshUI()
+            //在调整一下各个滑块的标签位置
+            self.handlers.map { handler in
+                self.updateHandlerLabelPositions(handler: handler)
+            }
         }
     }
     
@@ -55,6 +59,10 @@ public class CHRangeSlider: UIControl {
     @IBInspectable public var maxValue: Double = 100 {
         didSet {
             self.refreshUI()
+            //在调整一下各个滑块的标签位置
+            self.handlers.map { handler in
+                self.updateHandlerLabelPositions(handler: handler)
+            }
         }
     }
     
@@ -645,6 +653,10 @@ extension CHRangeSlider {
         //执行结束滑动动画
         self.animateHandler(handler: handler, selected: false)
         
+        //在调整一下各个滑块的标签位置
+        self.handlers.map { handler in
+            self.updateHandlerLabelPositions(handler: handler)
+        }
     }
 }
 

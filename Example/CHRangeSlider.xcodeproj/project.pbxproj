@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55C21BC905AE7DE4F56E8B77 /* Pods_CHRangeSlider_Example_CHRangeSlider_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136C72B086543F968C875375 /* Pods_CHRangeSlider_Example_CHRangeSlider_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -68,7 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBC3A235E59DF827FA71D717 /* Pods_CHRangeSlider_Tests.framework in Frameworks */,
-				55C21BC905AE7DE4F56E8B77 /* Pods_CHRangeSlider_Example_CHRangeSlider_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

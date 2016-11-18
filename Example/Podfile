@@ -6,6 +6,5 @@ target 'CHRangeSlider_Example' do
   target 'CHRangeSlider_Tests' do
     inherit! :search_paths
 
-    
   end
 end

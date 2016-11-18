@@ -37,6 +37,10 @@ public class CHRangeSlider: UIControl {
     /// 触摸范围扩展，负数越大，越容易触摸
     let kHandlerTouchAreaExpansion: CGFloat = -15
     
+    
+    /// 初始点的位置，远离原点
+    let kInitPoint = CGPoint(x: -10, y: -10)
+    
     //MARK: - 公开变量
     
     /// 最小值
@@ -172,16 +176,18 @@ public class CHRangeSlider: UIControl {
         for handler in self.handlers {
             
             //3.在滑杆上创建按钮控件
-            var handlerLayer = handler.handlerLayer
+            let handlerLayer = handler.handlerLayer
             handlerLayer.cornerRadius = handler.size / 2
             
+            let initPoint = self.kInitPoint
             if let img = handler.handlerImage {
                 handlerLayer.contents = img.cgImage
-                handlerLayer.frame = CGRect(x: 0, y: 0,
-                                            width: img.size.width, height: img.size.width)
+                handlerLayer.frame = CGRect(origin: initPoint,
+                                            size: CGSize(width: img.size.width, height: img.size.width))
+         
             } else {
                 
-                handlerLayer.frame = CGRect(origin: CGPoint.zero,
+                handlerLayer.frame = CGRect(origin: initPoint,
                                             size: CGSize(width: handler.size, height: handler.size))
             }
             
@@ -195,10 +201,10 @@ public class CHRangeSlider: UIControl {
             handler.textWidth = initalTextWidth
             
             //4.在滑杆按钮上方创建文字
-            var topTextLabel = handler.topTextLayer
+            let topTextLabel = handler.topTextLayer
             topTextLabel.alignmentMode = kCAAlignmentCenter
-            topTextLabel.frame = CGRect(x: 0, y: 0,
-                                        width: initalTextWidth, height: self.kTextHeight)
+            topTextLabel.frame = CGRect(origin: initPoint,
+                                        size: CGSize(width: initalTextWidth, height: self.kTextHeight))
             topTextLabel.fontSize = handler.textSize
             topTextLabel.contentsScale = UIScreen.main.scale
             topTextLabel.font = UIFont.systemFont(ofSize: handler.textSize)
@@ -206,10 +212,10 @@ public class CHRangeSlider: UIControl {
             self.layer.addSublayer(topTextLabel)
             
             //5.在滑杆按钮下方创建文字
-            var bottomTextLabel = handler.bottomTextLayer
+            let bottomTextLabel = handler.bottomTextLayer
             bottomTextLabel.alignmentMode = kCAAlignmentCenter
-            bottomTextLabel.frame = CGRect(x: 0, y: 0,
-                                           width: initalTextWidth, height: self.kTextHeight)
+            bottomTextLabel.frame = CGRect(origin: initPoint,
+                                           size: CGSize(width: initalTextWidth, height: self.kTextHeight))
             bottomTextLabel.fontSize = handler.textSize
             bottomTextLabel.contentsScale = UIScreen.main.scale
             bottomTextLabel.font = UIFont.systemFont(ofSize: handler.textSize)
@@ -298,6 +304,9 @@ extension CHRangeSlider {
     /// - Parameter handler: 滑块
     func updateHandlerPositions(handler: CHSliderHandler) {
         
+        //检查值是否需要重置
+        _ = self.resetValueInRange(handler: handler)
+        
         let newX = self.getXPositionAlongLineForValue(value: handler.value)
 //        NSLog("\(handler.bottomText) \(newX) == \(handler.handlerLayer.position.x)")
         if newX == handler.handlerLayer.position.x {
@@ -331,7 +340,7 @@ extension CHRangeSlider {
     
     /// 更新滑块位置
     func updateHandlerLabelPositions(handler: CHSliderHandler) {
-        
+
         //获取滑块的中间坐标
         let handlerCenter = CGPoint(x: handler.handlerLayer.frame.midX,
                                     y: handler.handlerLayer.frame.midY)
@@ -345,11 +354,11 @@ extension CHRangeSlider {
                                                height: self.kTextHeight)
         
         //新的上方文本位置
-        var newTopLabelCenter = CGPoint(x: handlerCenter.x,
+        let newTopLabelCenter = CGPoint(x: handlerCenter.x,
                                         y: handler.handlerLayer.frame.midY - handler.size / 2 - handler.topTextLayer.frame.size.height / 2 - handler.labelPadding)
         
         //新的下方文本位置
-        var newBottomLabelCenter = CGPoint(x: handlerCenter.x,
+        let newBottomLabelCenter = CGPoint(x: handlerCenter.x,
                                            y: handler.handlerLayer.frame.midY + handler.size / 2 + handler.bottomTextLayer.frame.size.height / 2 + handler.labelPadding)
         
         handler.topTextLayer.position = newTopLabelCenter
@@ -373,9 +382,6 @@ extension CHRangeSlider {
         //新的下方文本位置
         var newBottomLabelCenter = handler.bottomTextLayer.position
         
-        //滑块的中心
-        let handlerCenter = handler.handlerLayer.position
-        
         
         //判断该滑块label是否碰到其它滑块的label
         var otherHandlers = self.handlers
@@ -384,7 +390,7 @@ extension CHRangeSlider {
         var bottomTextY: CGFloat = newBottomLabelCenter.y   //临时记录底部文本最下的Y
         for other in otherHandlers {
             
-            guard other.handlerLayer.frame.origin != CGPoint.zero else {
+            guard other.handlerLayer.frame.origin != self.kInitPoint else {
                 continue    //如果其它滑块位置未初始化过，就不调整
             }
             
@@ -519,6 +525,25 @@ extension CHRangeSlider {
         }, completion: nil)
     }
     
+    
+    /// 检查滑块值是否超过范围需要充值
+    ///
+    /// - Parameter handler:
+    /// - Returns: 
+    func resetValueInRange(handler: CHSliderHandler) -> Bool {
+        var flag = false
+        if handler.value < self.minValue {
+            handler.value = self.minValue
+            flag = true
+        }
+        
+        if handler.value > self.maxValue {
+            handler.value = self.maxValue
+            flag = true
+        }
+        
+        return flag
+    }
 }
 
 

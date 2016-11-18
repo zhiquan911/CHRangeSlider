@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55C21BC905AE7DE4F56E8B77 /* Pods_CHRangeSlider_Example_CHRangeSlider_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136C72B086543F968C875375 /* Pods_CHRangeSlider_Example_CHRangeSlider_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0FE3308E1E57BD56B4948CE3 /* Pods-CHRangeSlider_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHRangeSlider_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHRangeSlider_Tests/Pods-CHRangeSlider_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		136C72B086543F968C875375 /* Pods_CHRangeSlider_Example_CHRangeSlider_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHRangeSlider_Example_CHRangeSlider_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18717265D5FFEBE79B32B7BA /* Pods_CHRangeSlider_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHRangeSlider_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A4D4507F26E98D940CFB9A /* CHRangeSlider.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CHRangeSlider.podspec; path = ../CHRangeSlider.podspec; sourceTree = "<group>"; };
 		5A8561CEA9687E7106E680E1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		9BC3BE7F7748E21CCDBBA1EC /* Pods_CHRangeSlider_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHRangeSlider_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E83075BA75F0A4D0DBE642 /* Pods-CHRangeSlider_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHRangeSlider_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHRangeSlider_Example/Pods-CHRangeSlider_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C5438FC61DDAB2FB00CF820A /* CHRangeSlider.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CHRangeSlider.playground; sourceTree = "<group>"; };
+		CC33836383A85A28385CC89B /* Pods-CHRangeSlider_Example-CHRangeSlider_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHRangeSlider_Example-CHRangeSlider_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHRangeSlider_Example-CHRangeSlider_Tests/Pods-CHRangeSlider_Example-CHRangeSlider_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D01C64C7F6593D0B71A2DDA9 /* Pods-CHRangeSlider_Example-CHRangeSlider_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHRangeSlider_Example-CHRangeSlider_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHRangeSlider_Example-CHRangeSlider_Tests/Pods-CHRangeSlider_Example-CHRangeSlider_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E408EF94C761DE275605511F /* Pods-CHRangeSlider_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHRangeSlider_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHRangeSlider_Example/Pods-CHRangeSlider_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EB3D6143091CECF20C087292 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBC3A235E59DF827FA71D717 /* Pods_CHRangeSlider_Tests.framework in Frameworks */,
+				55C21BC905AE7DE4F56E8B77 /* Pods_CHRangeSlider_Example_CHRangeSlider_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +151,7 @@
 			children = (
 				9BC3BE7F7748E21CCDBBA1EC /* Pods_CHRangeSlider_Example.framework */,
 				18717265D5FFEBE79B32B7BA /* Pods_CHRangeSlider_Tests.framework */,
+				136C72B086543F968C875375 /* Pods_CHRangeSlider_Example_CHRangeSlider_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,6 +163,8 @@
 				E408EF94C761DE275605511F /* Pods-CHRangeSlider_Example.release.xcconfig */,
 				60B7D06803ACF35A59743577 /* Pods-CHRangeSlider_Tests.debug.xcconfig */,
 				0FE3308E1E57BD56B4948CE3 /* Pods-CHRangeSlider_Tests.release.xcconfig */,
+				CC33836383A85A28385CC89B /* Pods-CHRangeSlider_Example-CHRangeSlider_Tests.debug.xcconfig */,
+				D01C64C7F6593D0B71A2DDA9 /* Pods-CHRangeSlider_Example-CHRangeSlider_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";

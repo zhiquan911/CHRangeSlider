@@ -1,5 +1,5 @@
 PODS:
-  - CHRangeSlider (0.1.0)
+  - CHRangeSlider (1.0.0)
 
 DEPENDENCIES:
   - CHRangeSlider (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CHRangeSlider: 028a502986f60dc088c6b3db252ad25e5581e4ba
+  CHRangeSlider: 7e16f31e0061ff6b3ffb0298f1bdca996fd3118f
 
 PODFILE CHECKSUM: f17c964fee2acc043974736f3445283f33616a06
 

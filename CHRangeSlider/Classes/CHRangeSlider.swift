@@ -48,9 +48,7 @@ public class CHRangeSlider: UIControl {
         didSet {
             self.refreshUI()
             //在调整一下各个滑块的标签位置
-            self.handlers.map { handler in
-                self.updateHandlerLabelPositions(handler: handler)
-            }
+            self.updateAllHandlersLabelPosition()
         }
     }
     
@@ -60,9 +58,7 @@ public class CHRangeSlider: UIControl {
         didSet {
             self.refreshUI()
             //在调整一下各个滑块的标签位置
-            self.handlers.map { handler in
-                self.updateHandlerLabelPositions(handler: handler)
-            }
+            self.updateAllHandlersLabelPosition()
         }
     }
     
@@ -284,6 +280,14 @@ extension CHRangeSlider {
     public func refreshUI() {
         for handler in self.handlers {
             self.updateHandlerPositions(handler: handler)
+        }
+    }
+    
+    
+    /// 更新所有滑块的标签位置
+    func updateAllHandlersLabelPosition() {
+        for handler in self.handlers {
+            self.updateHandlerLabelPositions(handler: handler)
         }
     }
     
@@ -654,9 +658,7 @@ extension CHRangeSlider {
         self.animateHandler(handler: handler, selected: false)
         
         //在调整一下各个滑块的标签位置
-        self.handlers.map { handler in
-            self.updateHandlerLabelPositions(handler: handler)
-        }
+        self.updateAllHandlersLabelPosition()
     }
 }
 

@@ -1,0 +1,22 @@
+{
+  "name": "CHRangeSlider",
+  "version": "0.1.0",
+  "summary": "A short description of CHRangeSlider.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/CHRangeSlider",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "麦志泉": "zhiquan911@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/CHRangeSlider.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CHRangeSlider/Classes/**/*"
+}

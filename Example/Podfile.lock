@@ -1,0 +1,16 @@
+PODS:
+  - CHRangeSlider (0.1.0)
+
+DEPENDENCIES:
+  - CHRangeSlider (from `../`)
+
+EXTERNAL SOURCES:
+  CHRangeSlider:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CHRangeSlider: 028a502986f60dc088c6b3db252ad25e5581e4ba
+
+PODFILE CHECKSUM: f17c964fee2acc043974736f3445283f33616a06
+
+COCOAPODS: 1.1.0.rc.2

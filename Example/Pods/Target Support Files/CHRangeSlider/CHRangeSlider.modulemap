@@ -1,0 +1,6 @@
+framework module CHRangeSlider {
+  umbrella header "CHRangeSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

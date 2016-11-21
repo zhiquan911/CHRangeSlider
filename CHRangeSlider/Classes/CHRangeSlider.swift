@@ -278,7 +278,13 @@ extension CHRangeSlider {
     
     /// 刷新UI
     public func refreshUI() {
-        for handler in self.handlers {
+        //先以各个y轴的高度从低到高排序
+        let newHandlers = self.handlers.sorted {
+            (obj_1, obj_2) -> Bool in
+            return obj_1.topTextLayer.position.y > obj_2.topTextLayer.position.y
+        }
+        
+        for handler in newHandlers {
             self.updateHandlerPositions(handler: handler)
         }
     }
@@ -286,7 +292,14 @@ extension CHRangeSlider {
     
     /// 更新所有滑块的标签位置
     func updateAllHandlersLabelPosition() {
-        for handler in self.handlers {
+        //先以各个y轴的高度从低到高排序
+        let newHandlers = self.handlers.sorted {
+            (obj_1, obj_2) -> Bool in
+            return obj_1.topTextLayer.position.y > obj_2.topTextLayer.position.y
+        }
+        
+        for handler in newHandlers {
+            //NSLog("handler.bottomText = \(handler.bottomText)")
             self.updateHandlerLabelPositions(handler: handler)
         }
     }
@@ -396,7 +409,10 @@ extension CHRangeSlider {
         
         
         //判断该滑块label是否碰到其它滑块的label
-        var otherHandlers = self.handlers
+        var otherHandlers = self.handlers.sorted {
+            (obj_1, obj_2) -> Bool in
+            return obj_1.topTextLayer.position.y > obj_2.topTextLayer.position.y
+        }
         otherHandlers.ch_removeObject(handler)
         var topTextY: CGFloat = newTopLabelCenter.y   //临时记录顶部文本最上的Y
         var bottomTextY: CGFloat = newBottomLabelCenter.y   //临时记录底部文本最下的Y

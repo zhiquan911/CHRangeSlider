@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CHRangeSlider'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'Swift3编写的多点滑杆组件'
 
 

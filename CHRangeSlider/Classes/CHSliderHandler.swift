@@ -101,7 +101,7 @@ public class CHSliderHandler: NSObject {
     var handlerLayer: CAShapeLayer = CAShapeLayer()
     
     /// 是否滑动中
-    var isActiving: Bool = false
+    public var isActiving: Bool = false
     
     
     /// 文本宽度

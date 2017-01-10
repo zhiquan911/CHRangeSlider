@@ -26,7 +26,7 @@ public protocol CHRangeSliderDelegate {
 }
 
 //MARK: - 滑杆组件
-@IBDesignable
+//@IBDesignable
 public class CHRangeSlider: UIControl {
     
     //MARK: - 常量变量

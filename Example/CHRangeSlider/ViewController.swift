@@ -73,11 +73,14 @@ extension ViewController: CHRangeSliderDelegate {
     
     func rangeSlider(slider: CHRangeSlider, stringForValue value: Double, handler: CHSliderHandler) -> String {
         let text = String(format: "￥%.2f", value)
-        if handler === self.minSelectItem {
+        if handler === self.minSelectItem
+            && self.minSelectItem.isActiving {
             self.textFieldOrder.text = String(format: "%.2f", value)
-        } else if handler === self.midSelectItem {
+        } else if handler === self.midSelectItem
+            && self.midSelectItem.isActiving {
             self.textFieldCurrent.text = String(format: "%.2f", value)
-        } else if handler === self.maxSelectItem {
+        } else if handler === self.maxSelectItem
+            && self.maxSelectItem.isActiving {
             self.textFieldTrigger.text = String(format: "%.2f", value)
         }
         return text

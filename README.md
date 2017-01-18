@@ -88,6 +88,12 @@ pod "CHRangeSlider"
 
 Chance, zhiquan911@qq.com
 
+## Donations
+
+为了让开发者更积极分享技术，开源程序代码，我们发起数字货币捐助计划，捐款只接收以下货币。
+
+- **BTC Address**:  3G4NdQQyCJK1RS5URb4h5KogWEyR4Mk16A
+
 ## License
 
 CHRangeSlider is available under the MIT license. See the LICENSE file for more info.

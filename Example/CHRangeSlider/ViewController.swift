@@ -60,7 +60,7 @@ class ViewController: UIViewController {
 
 
     //隐藏键盘
-    func closeKeyBoard() {
+    @objc func closeKeyBoard() {
         let window = UIApplication.shared.keyWindow
         window?.endEditing(false)
     }

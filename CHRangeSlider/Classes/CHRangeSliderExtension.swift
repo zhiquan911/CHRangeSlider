@@ -110,9 +110,13 @@ public extension String {
      - returns:
      */
     public func ch_sizeWithConstrained(font: UIFont) -> CGSize {
+        let newStr = NSString(string: self)
         let constraintRect = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
-        return boundingBox.size
+        let option = NSStringDrawingOptions.usesLineFragmentOrigin
+        let attributes = [NSAttributedStringKey.font: font]
+        let stringRect = newStr.boundingRect(with: constraintRect, options: option, attributes: attributes, context: nil)
+        
+        return stringRect.size
     }
     
 }
